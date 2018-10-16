@@ -1,0 +1,28 @@
+
+<button mat-button color="secondary" [routerLink]="['/aluno/novo']">
+  Cadastrar Aluno
+</button>
+
+<table>
+  <tr>
+    <th>RA</th>
+    <th>Nome</th>
+    <th>RG</th>
+    <th>CPF</th>
+    <th>Opções</th>
+  </tr>
+  <tr *ngFor="let aluno of alunos">
+    <td>{{aluno.ra}}</td>
+    <td>{{aluno.nome}}</td>
+    <td>{{aluno.rg}}</td>
+    <td>{{aluno.cpf}}</td>
+    <td>
+      <button mat-icon-button [routerLink]="['/aluno/editar', aluno.ra]">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="excluir(aluno.ra)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
