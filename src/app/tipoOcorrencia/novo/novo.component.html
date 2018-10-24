@@ -1,3 +1,14 @@
-<p>
-  novo works!
-</p>
+<h2>Novo Tipo de Ocorrencia</h2>
+
+<form class="formNovoVeiculo">
+  <mat-form-field>
+    <input matInput name="nome" type="text" placeholder="Nome" [(ngModel)]="tipoOcorrencia.nome" required>
+    <button mat-button *ngIf="tipoOcorrencia.nome" matSuffix mat-icon-button aria-label="Clear" (click)="tipoOcorrencia.nome=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+<button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+<button mat-raised-button color="warn" (click)="limparCampos()">Resetar</button>
+<button mat-raised-button routerLink="/tipoOcorrencia/lista">Voltar</button>

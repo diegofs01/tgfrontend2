@@ -1,3 +1,24 @@
-<p>
-  lista works!
-</p>
+<div id="listaTiposOcorrencias">
+
+  <h2>Tipos de Ocorrências</h2>
+
+  <table>
+    <tr class="titulo">
+      <td>ID</td>
+      <td>Descrição</td>
+    </tr>
+    <tr *ngFor="let tipoOcorrencia of tiposOcorrencias">
+      <td>{{tipoOcorrencia.id}}</td>
+      <td>{{tipoOcorrencia.nome}}</td>
+      <button mat-icon-button [routerLink]="['/tipoOcorrencia/editar', tipoOcorrencia.id]">
+        <mat-icon aria-label="Editar TipoOcorrencia">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="excluirTipoOcorrencia(tipoOcorrencia.id)">
+        <mat-icon aria-label="Excluir TipoOcorrencia">delete</mat-icon>
+      </button>
+    </tr>
+  </table>
+  
+  <button mat-raised-button color="primary" routerLink="/tipoOcorrencia/novo">Novo Tipo de Ocorrencia</button>
+  
+  </div>
