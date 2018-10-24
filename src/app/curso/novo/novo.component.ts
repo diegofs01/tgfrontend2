@@ -22,7 +22,7 @@ export class NovoComponent implements OnInit {
     }
 
     salvar() {
-      this.cursoService.save(this.curso)
+      this.cursoService.salvar(this.curso)
       .subscribe(response => {
         this.router.navigate(['/curso/lista']);
       });

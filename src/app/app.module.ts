@@ -26,6 +26,18 @@ import { ListaComponent as CursoLista } from './curso/lista/lista.component';
 import { EditarComponent as CursoEditar } from './curso/editar/editar.component';
 import { NovoComponent as CursoNovo } from './curso/novo/novo.component';
 
+import { NovoComponent as VeiculoNovo } from './veiculo/novo/novo.component';
+import { EditarComponent as VeiculoEditar } from './veiculo/editar/editar.component';
+import { ListaComponent as VeiculoLista } from './veiculo/lista/lista.component';
+
+import { NovoComponent as TipoOcorrenciaNovo } from './tipoOcorrencia/novo/novo.component';
+import { EditarComponent as TipoOcorrenciaEditar } from './tipoOcorrencia/editar/editar.component';
+import { ListaComponent as TipoOcorrenciaLista } from './tipoOcorrencia/lista/lista.component';
+
+import { NovoComponent as OcorrenciaNovo } from './ocorrencia/novo/novo.component';
+import { EditarComponent as OcorrenciaEditar } from './ocorrencia/editar/editar.component';
+import { ListaComponent as OcorrenciaLista } from './ocorrencia/lista/lista.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +48,19 @@ import { NovoComponent as CursoNovo } from './curso/novo/novo.component';
 
     CursoLista,
     CursoEditar,
-    CursoNovo
+    CursoNovo,
+
+    VeiculoNovo,
+    VeiculoEditar,
+    VeiculoLista,
+
+    TipoOcorrenciaNovo,
+    TipoOcorrenciaLista,
+    TipoOcorrenciaEditar,
+
+    OcorrenciaNovo,
+    OcorrenciaEditar,
+    OcorrenciaLista
   ],
   imports: [
     BrowserModule,

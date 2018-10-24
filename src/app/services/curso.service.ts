@@ -10,7 +10,7 @@ export class CursoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  save(curso: Curso) {
+  salvar(curso: Curso) {
     return this.httpClient.post(environment.apiUrl + 'curso', curso);
   }
 

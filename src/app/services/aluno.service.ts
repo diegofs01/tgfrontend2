@@ -1,32 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Aluno } from '../models/aluno';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlunoService {
-  apiUrl = 'https://tgbackend.herokuapp.com/api/aluno/';
+
+  private rota = 'aluno/';
 
   constructor(private httpClient: HttpClient) { }
 
   lista() {
-    return this.httpClient.get(this.apiUrl);
+    return this.httpClient.get(environment.apiUrl + this.rota);
   }
 
   buscar(ra: string) {
-    return this.httpClient.get(`${this.apiUrl}` + ra);
+    return this.httpClient.get(environment.apiUrl + this.rota + ra);
   }
 
   salvar(aluno: Aluno) {
-    return this.httpClient.post(`${this.apiUrl}`, aluno);
+    return this.httpClient.post(environment.apiUrl + this.rota, aluno);
   }
 
   alterar(aluno: Aluno, ra: string) {
-    return this.httpClient.put(`${this.apiUrl}` + ra, aluno);
+    return this.httpClient.put(environment.apiUrl + this.rota + ra, aluno);
   }
 
   excluir(ra: string) {
-    return this.httpClient.delete(`${this.apiUrl}` + ra);
+    return this.httpClient.delete(environment.apiUrl + this.rota + ra);
   }
 }

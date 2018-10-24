@@ -22,7 +22,6 @@ export class ListaComponent implements OnInit {
     this.alunoService.lista()
     .subscribe((data: Array<Aluno>) => {
       this.alunos = data;
-      console.log(data);
     });
   }
 
