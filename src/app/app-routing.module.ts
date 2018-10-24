@@ -17,6 +17,10 @@ import { ListaComponent as TipoOcorrenciaLista } from './tipoOcorrencia/lista/li
 import { EditarComponent as TipoOcorrenciaEditar } from './tipoOcorrencia/editar/editar.component';
 import { NovoComponent as TipoOcorrenciaNovo } from './tipoOcorrencia/novo/novo.component';
 
+import { ListaComponent as OcorrenciaLista } from './ocorrencia/lista/lista.component';
+import { EditarComponent as OcorrenciaEditar } from './ocorrencia/editar/editar.component';
+import { NovoComponent as OcorrenciaNovo } from './ocorrencia/novo/novo.component';
+
 const routes: Routes = [
     {
         path: 'aluno/lista',
@@ -66,6 +70,18 @@ const routes: Routes = [
         path: 'tipoOcorrencia/editar/:id',
         component: TipoOcorrenciaEditar
       },
+      {
+        path: 'ocorrencia/listaOcorrencia',
+        component: OcorrenciaLista
+      },
+      {
+        path: 'ocorrencia/novo',
+        component: OcorrenciaNovo
+      },
+      {
+        path: 'ocorrencia/editar/:numero',
+        component: OcorrenciaEditar
+      }
 ];
 
 @NgModule({

@@ -1,3 +1,39 @@
-<p>
-  lista works!
-</p>
+<div id="listaOcorrencia">
+  
+  <h2>Lista de Ocorrencias
+
+    <button mat-raised-button (click)="openDialog()" color="primary" *ngIf="!listaComFiltro">Filtrar Ocorrencias</button>
+    <button mat-raised-button (click)="listarVeiculos()" color="warn" *ngIf="listaComFiltro">Resetar Filtro</button>
+
+  </h2>
+
+  <table *ngIf="!listaVazia">
+    <tr class="titulo">
+      <td>Número</td>
+      <td>Placa</td>
+      <td>Data</td>
+      <td>Hora</td>
+      <td>Detalhamento</td>
+      <td>Veiculo Cadastrado?</td>
+    </tr>
+    <tr *ngFor="let ocorrencia of ocorrencias">
+      <td>{{ocorrencia.numero}}</td>
+      <td>{{ocorrencia.placaVeiculo}}</td>
+      <td>{{formataData(ocorrencia)}}</td>
+      <td>{{ocorrencia.hora}}</td>
+      <td>{{ocorrencia.descricao}}</td>
+      <td>{{ocorrencia.veiculoCadastrado ? 'Sim' : 'Não'}}</td>
+      <button mat-icon-button [routerLink]="['/ocorrencia/editar', ocorrencia.numero]">
+        <mat-icon aria-label="Editar Ocorrencia">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="excluirOcorrencia(ocorrencia.numero)">
+        <mat-icon aria-label="Excluir Ocorrencia">delete</mat-icon>
+      </button>
+    </tr>
+  </table>
+
+  <p *ngIf="listaVazia">Nenhuma Ocorencia Cadastrada</p>
+
+  <button mat-raised-button color="primary" routerLink="/ocorrencia/novo">Nova Ocorrencia</button>
+  
+</div>

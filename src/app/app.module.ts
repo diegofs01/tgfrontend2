@@ -11,7 +11,9 @@ import {
   MatIconModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDialogModule,
+  MatListModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -38,6 +40,10 @@ import { NovoComponent as OcorrenciaNovo } from './ocorrencia/novo/novo.componen
 import { EditarComponent as OcorrenciaEditar } from './ocorrencia/editar/editar.component';
 import { ListaComponent as OcorrenciaLista } from './ocorrencia/lista/lista.component';
 
+import { FiltroOcorrenciasComponent as DialogFiltrarOcorrencias } from './dialogs/filtro-ocorrencias/filtro-ocorrencias.component';
+// tslint:disable-next-line:max-line-length
+import { VeiculoNaoCadastradoComponent as DialogVeiculoNaoCadastrado } from './dialogs/veiculo-nao-cadastrado/veiculo-nao-cadastrado.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +66,10 @@ import { ListaComponent as OcorrenciaLista } from './ocorrencia/lista/lista.comp
 
     OcorrenciaNovo,
     OcorrenciaEditar,
-    OcorrenciaLista
+    OcorrenciaLista,
+
+    DialogFiltrarOcorrencias,
+    DialogVeiculoNaoCadastrado
   ],
   imports: [
     BrowserModule,
@@ -74,11 +83,17 @@ import { ListaComponent as OcorrenciaLista } from './ocorrencia/lista/lista.comp
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDialogModule,
+    MatListModule,
 
     AppRoutingModule,
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogVeiculoNaoCadastrado,
+    DialogFiltrarOcorrencias
+  ]
 })
 export class AppModule { }
