@@ -1,3 +1,32 @@
-<p>
-  lista works!
-</p>
+<div id="listaVeiculos">
+
+  <h2>Lista de Veículos</h2>
+
+  <mat-form-field>
+    <input matInput name="filtro" type="text" placeholder="Filtro" [(ngModel)]="filtroPlaca">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="filtrarVeiculo()">Filtar Veiculo</button>
+  <button mat-raised-button color="warn" (click)="resetarFiltro()">Resetar Filtro</button>
+
+  <table>
+    <tr class="titulo">
+      <td>Placa</td>
+      <td>Modelo</td>
+      <td>RA do Aluno</td>
+    </tr>
+    <tr *ngFor="let veiculo of veiculos">
+      <td>{{veiculo.placa}}</td>
+      <td>{{veiculo.modelo}}</td>
+      <td>{{veiculo.raAluno}}</td>
+      <button mat-icon-button [routerLink]="['/veiculo/editar', veiculo.placa]">
+        <mat-icon aria-label="Editar Veiculo">edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="excluirVeiculo(veiculo.placa)">
+        <mat-icon aria-label="Excluir Veiculo">delete</mat-icon>
+      </button>
+    </tr>
+  </table>
+  
+  <button mat-raised-button color="primary" routerLink="/veiculo/novo">Novo Veiculo</button>
+  
+  </div>
